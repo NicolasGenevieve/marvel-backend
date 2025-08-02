@@ -89,10 +89,10 @@ router.delete("/favoris/comics/:id", isAuthenticated, async (req, res) => {
     });
 
     if (!deleted) {
-      return res.status(404).json({ message: "Favori non trouvé" });
+      return res.status(404).json({ message: "Favoris non trouvé" });
     }
 
-    return res.status(200).json({ message: "Favori supprimé" });
+    return res.status(200).json({ message: "Favoris supprimé" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -106,10 +106,10 @@ router.delete("/favoris/characters/:id", isAuthenticated, async (req, res) => {
     });
 
     if (!deleted) {
-      return res.status(404).json({ message: "Favori non trouvé" });
+      return res.status(404).json({ message: "Favoris non trouvé" });
     }
 
-    return res.status(200).json({ message: "Favori supprimé" });
+    return res.status(200).json({ message: "Favoris supprimé" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }

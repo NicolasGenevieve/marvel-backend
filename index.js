@@ -34,6 +34,6 @@ app.all(/.*/, (req, res) => {
   return res.status(404).json({ message: "👀 Aucun super héro par ici !!" });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Serveur de super héro démarré 🥷🦸‍♂️🦹‍♀️👽");
 });
