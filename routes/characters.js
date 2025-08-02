@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const isAuthenticated = require("../middlewares/isAuthenticated");
 
-router.get("/characters", async (req, res) => {
+router.get("/characters", isAuthenticated, async (req, res) => {
   try {
     const { name = "", limit = 100, skip = 0 } = req.query;
 
@@ -19,7 +20,7 @@ router.get("/characters", async (req, res) => {
   }
 });
 
-router.get("/character/:characterId", async (req, res) => {
+router.get("/character/:characterId", isAuthenticated, async (req, res) => {
   try {
     const { characterId } = req.params;
     const response = await axios.get(
